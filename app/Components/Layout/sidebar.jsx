@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 //assets
-import GridIcon from "../../assets/sidebar/gridIcon.svg";
+import GridIcon from "../../assets/sidebar/GridIcon.svg";
 import { TbDashboard } from "react-icons/tb";
 import { MdEmail } from "react-icons/md";
 import { PiChatsCircleThin } from "react-icons/pi";
