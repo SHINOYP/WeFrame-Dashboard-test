@@ -57,7 +57,7 @@ export default function Navbar({ showHamBtn, setShowHamBtn }) {
         </Badge>
       </div>
       <ReactFlagsSelect
-        className="text-sm font-semibold rounded-full bg-active"
+        className="hidden text-sm font-semibold rounded-full bg-active md:flex"
         selected={selected}
         onSelect={(code) => setSelected(code)}
       />
@@ -65,7 +65,7 @@ export default function Navbar({ showHamBtn, setShowHamBtn }) {
       <div className="flex flex-row-reverse items-center mr-2 lg:mr-0 lg:flex-row">
         <div className="flex lg:w-[57px] lg:ml-0 ml-2 w-10 h-10 mt-1 lg:mt-0 lg:h-[57px] mr-2 rounded-xl  bg-gray-300"></div>
         <div className="flex flex-col gap-2 ml-6 md:ml-0">
-          <h4 className="text-xs font-semibold text-white md:text-xs xl:text-base">
+          <h4 className="text-xs text-white md:font-semibold md:text-xs xl:text-base">
             {" "}
             Instructor Day
           </h4>

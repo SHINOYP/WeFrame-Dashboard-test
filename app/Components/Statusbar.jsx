@@ -14,7 +14,7 @@ export default function Statusbar() {
         <AiOutlineArrowLeft className="text-black" />
       </div>
       <div className="flex flex-col justify-between py-2 ml-4">
-        <h1 className="mt-2 text-3xl font-semibold leading-10">
+        <h1 className="text-2xl leading-10 md:text-3xl md:mt-2 md:font-semibold">
           School November Tasks
         </h1>
         <small className="text-gray-400">
@@ -28,13 +28,13 @@ export default function Statusbar() {
             alt="Picture of the author"
             className="hidden lg:flex"
           />{" "}
-          <button className="md:px-4 px-2 w-fit flex items-center gap-1 font-semibold lg:h-[42px] text-xs bg-[#6418C3] md:text-xs xl:text-base  rounded-md md:rounded-xl ">
+          <button className="md:px-4 px-2 w-fit flex items-center gap-1 md:font-semibold lg:h-[42px] text-xs bg-[#6418C3] md:text-xs xl:text-base  rounded-md md:rounded-xl ">
             <MdPersonAdd /> Invite People
           </button>
           <button className="lg:w-[89px] md:p-2 px-4 lg:h-[42px]  text-xs md:text-xs xl:text-base  rounded-xl border">
             Private
           </button>
-          <button className="lg:w-[89px] font-semibold md:p-2 px-4 lg:h-[42px] text-xs md:text-xs xl:text-base rounded-xl bg-blue-500">
+          <button className="lg:w-[89px] md:font-semibold md:p-2 px-4 lg:h-[42px] text-xs md:text-xs xl:text-base rounded-xl bg-blue-500">
             Edit
           </button>
           <button className="px-4 lg:h-[42px] w-fit r gap-1 items-center hidden md:flex  text-xs md:text-xs xl:text-base rounded-xl border">
@@ -55,7 +55,11 @@ export default function Statusbar() {
           <h4 className="hidden text-xs lg:flex md:text-xs xl:text-base">
             Total Progress 60%
           </h4>
-          <Progress percent={50} status="active" className="w-60" />
+          <Progress
+            percent={50}
+            status="active"
+            className="mt-3 -mb-2 md:mt-0 sm:mb-4 sm:ml-8 lg:ml-0 lg:mb-0 w-60"
+          />
         </div>
       </div>
     </div>
