@@ -4,11 +4,25 @@ import Image from "next/image";
 import Draggable from "./Draggable";
 import Droppable from "./Droppable";
 import People from "../../assets/people.svg";
-import { DndContext, closestCenter } from "@dnd-kit/core";
+import {
+  DndContext,
+  closestCenter,
+  useSensor,
+  useSensors,
+  TouchSensor,
+  KeyboardSensor,
+  MouseSensor,
+} from "@dnd-kit/core";
 import { Progress } from "antd";
+import { AiOutlineClockCircle } from "react-icons/ai";
 
 export default function ToDoListContainer({ initialTasks, lists }) {
   const [tasks, setTasks] = useState([...initialTasks]);
+  const mouseSensor = useSensor(MouseSensor);
+  const touchSensor = useSensor(TouchSensor);
+  const keyboardSensor = useSensor(KeyboardSensor);
+
+  const sensors = useSensors(mouseSensor, touchSensor, keyboardSensor);
   const onDragEnd = (event) => {
     const { over, active } = event;
     // console.log({ over, active });
@@ -20,7 +34,7 @@ export default function ToDoListContainer({ initialTasks, lists }) {
             type: over?.id,
           };
         }
-        console.log(tasks);
+        // console.log(tasks);
         return item;
       })
     );
@@ -33,6 +47,7 @@ export default function ToDoListContainer({ initialTasks, lists }) {
       <DndContext
         collisionDetection={closestCenter}
         onDragEnd={onDragEnd}
+        sensors={sensors}
         autoScroll={{ threshold: { x: 0, y: 100 } }}
       >
         <div className="flex mt-10 mr-2 rounded-lg">
@@ -64,8 +79,8 @@ export default function ToDoListContainer({ initialTasks, lists }) {
                         alt="Picture of the author"
                         className="w-10 md:w-20 lg:w-24 xl:w-28"
                       />{" "}
-                      <small className="text-[9px] md:text-xs lg:text-sm text-gray-400">
-                        Due in 4 days
+                      <small className="text-[9px] items-center gap-1 flex md:text-xs lg:text-sm text-gray-400">
+                        <AiOutlineClockCircle /> Due in 4 days
                       </small>
                     </div>
                   </div>

@@ -14,7 +14,9 @@ export default function Statusbar() {
         <AiOutlineArrowLeft className="text-black" />
       </div>
       <div className="flex flex-col justify-between py-2 ml-4">
-        <h1>School November Tasks</h1>
+        <h1 className="mt-2 text-3xl font-semibold leading-10">
+          School November Tasks
+        </h1>
         <small className="text-gray-400">
           Created by Instructor Day on November 31,2022
         </small>
@@ -26,13 +28,13 @@ export default function Statusbar() {
             alt="Picture of the author"
             className="hidden lg:flex"
           />{" "}
-          <button className="md:px-4 px-2 w-fit flex items-center gap-1  lg:h-[42px] text-xs bg-[#6418C3] md:text-xs xl:text-base  rounded-md md:rounded-xl ">
+          <button className="md:px-4 px-2 w-fit flex items-center gap-1 font-semibold lg:h-[42px] text-xs bg-[#6418C3] md:text-xs xl:text-base  rounded-md md:rounded-xl ">
             <MdPersonAdd /> Invite People
           </button>
           <button className="lg:w-[89px] md:p-2 px-4 lg:h-[42px]  text-xs md:text-xs xl:text-base  rounded-xl border">
             Private
           </button>
-          <button className="lg:w-[89px] md:p-2 px-4 lg:h-[42px] text-xs md:text-xs xl:text-base rounded-xl bg-blue-500">
+          <button className="lg:w-[89px] font-semibold md:p-2 px-4 lg:h-[42px] text-xs md:text-xs xl:text-base rounded-xl bg-blue-500">
             Edit
           </button>
           <button className="px-4 lg:h-[42px] w-fit r gap-1 items-center hidden md:flex  text-xs md:text-xs xl:text-base rounded-xl border">
@@ -43,7 +45,7 @@ export default function Statusbar() {
       <div className="flex flex-col pl-5 mr-auto md:mr-0 md:ml-auto lg:pl-0">
         <div className="flex flex-row-reverse gap-4 mr-auto md:mr-0 md:flex-row md:ml-auto">
           <div>
-            <h2>Centered Martial Arts</h2>
+            <h2 className="font-semibold">Centered Martial Arts</h2>
             <small className="text-gray-400">SunnyValem, cs</small>
           </div>
           <div className="flex w-[57px] h-[57px] mr-2 rounded-xl bg-white"></div>

@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import ReactFlagsSelect from "react-flags-select";
 import { BsSearch, BsBellFill, BsPersonVideo3 } from "react-icons/bs";
 import { MdLibraryAddCheck } from "react-icons/md";
 import { Badge } from "antd";
@@ -12,6 +13,8 @@ const onChange = (e) => {
 };
 
 export default function Navbar({ showHamBtn, setShowHamBtn }) {
+  const [selected, setSelected] = useState("");
+
   const handleHamClick = () => {
     setShowHamBtn(!showHamBtn);
   };
@@ -36,7 +39,7 @@ export default function Navbar({ showHamBtn, setShowHamBtn }) {
           placeholder="Search here"
         />
       </div>
-      <Link href={"/"} className="hidden text-active xl:flex">
+      <Link href={"/"} className="hidden font-semibold text-active xl:flex">
         OTHER MENUS
       </Link>
       <div className="hidden gap-6 lg:flex">
@@ -53,28 +56,23 @@ export default function Navbar({ showHamBtn, setShowHamBtn }) {
           <MdLibraryAddCheck className="text-2xl text-active" />
         </Badge>
       </div>
-
-      <select
-        name="pets"
-        className="hidden w-24 p-2 text-white border-none bg-active rounded-2xl md:flex"
-        onChange={onChange}
-      >
-        <option value="English">English</option>
-        <option value="Hindi">Hindi</option>
-        <option value="Arabic">Arabic</option>
-      </select>
-
+      <ReactFlagsSelect
+        className="text-sm font-semibold rounded-full bg-active"
+        selected={selected}
+        onSelect={(code) => setSelected(code)}
+      />
+      ;
       <div className="flex flex-row-reverse items-center mr-2 lg:mr-0 lg:flex-row">
         <div className="flex lg:w-[57px] lg:ml-0 ml-2 w-10 h-10 mt-1 lg:mt-0 lg:h-[57px] mr-2 rounded-xl  bg-gray-300"></div>
         <div className="flex flex-col gap-2 ml-6 md:ml-0">
-          <h4 className="text-xs text-white md:text-xs xl:text-base">
+          <h4 className="text-xs font-semibold text-white md:text-xs xl:text-base">
             {" "}
             Instructor Day
           </h4>
 
           <select
             name="pets"
-            className="px-0 text-xs border-none md:w-24 md:p-2 h-min custom-select md:text-xs xl:text-base text-active bg-primary rounded-2xl"
+            className="px-0 text-xs border-none md:w-24 h-min custom-select md:text-xs xl:text-base text-active bg-primary rounded-2xl"
             onChange={onChange}
           >
             <option value="Admin">Admin</option>

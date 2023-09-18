@@ -19,6 +19,10 @@
 }
 
 
-.ant-progress .ant-progress-bg{
+.ant-progress.ant-progress-bg{
     background-color: palegoldenrod;
+}
+
+.ant-progress .ant-progress-inner{
+  background-color: #7878f146;
 }
